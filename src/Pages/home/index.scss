@@ -1,0 +1,40 @@
+.pagina-home{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+       .home-secao1{
+
+        height: 10vh;
+        h1{
+            color: blueviolet;
+        }
+
+       }
+
+
+       .home-secao2 a{
+        margin: 50px;
+        background-color: blueviolet;
+        text-decoration: none;
+        color: #fff;
+        padding:10px 20px;
+        border-radius: 10px;
+       }
+       .home-secao2{
+       
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        
+            gap: 50px;
+       
+       }
+    
+}

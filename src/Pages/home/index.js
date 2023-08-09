@@ -1,0 +1,42 @@
+
+import Header from '../../components/header';
+import './index.scss';
+import { Link } from 'react-router-dom';
+
+
+
+function App() {
+  return (
+    <section>
+
+    <Header />
+
+    <div className='pagina-home'>
+
+      
+
+      <header className="home-secao1">
+      <h1> Home</h1>
+    </header>
+      <nav className='home-secao2'>
+        <div>
+        <Link  to='/tarefas'> Tarefas</Link>
+        <Link  to='/contato'> Contato</Link>
+        <Link  to='/media'> Media</Link>
+        <Link  to='/aulacomp'> Componentes</Link>
+        </div>
+        <div>
+        <Link  to='/correio'> Correio</Link>
+        <Link  to='/aluno'> Aluno</Link>
+        <Link  to='/sorvetinho'> Sorvete</Link>
+        <Link  to='/juros'> Juros</Link>
+
+        </div>
+      </nav>
+      
+    </div>
+    </section>
+  );
+} 
+
+export default App;

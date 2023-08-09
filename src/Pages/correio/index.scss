@@ -1,0 +1,67 @@
+.pagina-correio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    height: 100vh;
+    background-color: rgb(234, 234, 234);
+    font-size: 30px;
+
+    .voltar {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        font-size: 18px;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+    input {
+        font-size: 22px;
+        padding: 5px;
+        margin: 5px;
+    }
+
+
+    button {
+        background-color: rgb(146, 29, 196);
+        
+        cursor: pointer;
+        outline: none;
+        border: none;
+
+        color: #fff;
+        font-size: 22px;
+        padding: 7px 15px;
+    }
+
+    button:hover {
+        background-color: rgb(113, 29, 196);
+    }
+
+
+
+    .container {
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px 10px #dedede;
+
+        padding: 50px 50px;
+    }
+
+    .container > div {
+        margin: 35px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .container > h1{
+        text-align:center ;
+    }
+
+
+}
