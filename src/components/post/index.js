@@ -14,7 +14,7 @@ export default function Post(props) {
                 <div>
                     <div className='nm'>
                         <h1>{props.usuario}</h1>
-                        <h2>• {props.tempo} </h2>
+                        <h2> • {props.tempo} </h2>
                     </div>
                     <img src='/assets/images/verificado.png' />
                 </div>

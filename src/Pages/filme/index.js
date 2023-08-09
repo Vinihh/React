@@ -15,11 +15,10 @@ export default function Filme() {
     };
 
     function proxPagina(){
-    let x= pagina;
-    let y=x + 1
-
-    setPagina(y);
-    buscar()
+        if(pagina < 10){
+            let x=pagina++
+        }
+        setPagina(pagina)
     }
 
 
@@ -27,10 +26,6 @@ export default function Filme() {
         let url = `http://www.omdbapi.com?apikey=7619b256&s=${filme}&type=${filtro}&page=${pagina}`;
         let busca = await axios.get(url);
         setListafilme(busca.data.Search);
-        setPagina(Math.ceil(busca.data.totalResults / 10));
-        setFilme('')
-
-       
     }
 
     function teclaEnter(e) {
