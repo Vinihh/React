@@ -21,7 +21,7 @@ export default function Tarefas(){
         <div className='container'>
           <h1> Lista de Tarefas </h1>
           <div>
-            Adicionar tarefa: <input type='text' onKeyUp={teclaPressionada} value={tarefa} onChange={e =>setTarefa(e.target.value)}/>
+            Adicionar tarefa:  <input type='text' onKeyUp={teclaPressionada} value={tarefa} onChange={e =>setTarefa(e.target.value)}/>
             <button onClick={adicionar}> Adicionar </button>
           </div>
           <div>
