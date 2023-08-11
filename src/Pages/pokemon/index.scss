@@ -1,0 +1,62 @@
+.pagina-pokemon{
+    background-color: rgba(162, 192, 214, 0.7);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .background{
+        width: 500px;
+        height: 250px;
+        border-radius: 100%;
+        background-color: rgba(137, 174, 202, 0.3);
+    }
+
+    section{
+        width: 1000px;
+        height: 706px; background: linear-gradient(90.09deg, #9A99C6 20.79%, #C699B2 99.93%);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        margin-bottom:10px ;
+        
+        gap: 10px;
+
+         img{
+            width: 150px;
+            height: 150px;
+         }
+
+         button{
+            background-color: rgba(119, 96, 203, 1);
+            border: none;
+            color: #fff;
+            width: 200px;
+            height: 50px;
+            border-radius: 50px;
+            font: 500 14px 'arial';
+            margin-bottom: 10px;
+         }
+
+         .poke{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 950px;
+            height: 400px;
+            gap: 10px;
+            overflow-y: scroll;
+         }
+
+         .buttons{
+            display: flex;
+            flex-direction: row;
+            gap: 0px 10px;
+         }
+
+    }
+}

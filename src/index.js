@@ -13,6 +13,8 @@ import Sorvete from './Pages/sorvetinho';
 import Juros from './Pages/juros';
 import Insta from './Pages/instagran';
 import Filme from './Pages/filme';
+import Pokemon from './Pages/pokemon';
+import Pokemn from './components/pokemon';
 
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
@@ -24,6 +26,8 @@ root.render(
     <Routes>
       <Route path ='/' element={<Insta />} />
       <Route path ='/filme' element={<Filme />} />
+      <Route path='/pokemon' element={<Pokemon />} />
+      <Route path='/pokemn' element={<Pokemn />} />
     </Routes>
   </BrowserRouter>
   </React.StrictMode>
