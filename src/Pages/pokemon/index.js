@@ -64,10 +64,10 @@ export default function Pokemon() {
         }
         setPokemons(listaPokemon);
     }
-    let x= 20;
-    let y= 20 + x;
-    function verMais(){
-        
+    
+     async function verMais(){
+        let x= 20;
+        let y= 20 + x;  
         setUrl('https://pokeapi.co/api/v2/pokemon?offset='+ y +'&limit=20')
         buscarPokemon()
     }
