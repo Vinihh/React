@@ -88,7 +88,7 @@ export default function Pokemon() {
 
                     <div className='inp1'>
                         <div>
-                            <h2>Novo item</h2>
+                            <h2>Nome Pokemon</h2>
                             <input type='text' value={nmPokemon} onChange={e => setNmPokemon(e.target.value)} ></input> 
                         </div>
 
