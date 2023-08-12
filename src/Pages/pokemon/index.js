@@ -5,10 +5,11 @@ import Pokemn from '../../components/pokemon';
 
 export default function Pokemon() {
     const [pokemons, setPokemons] = useState([]);
-    const[url,setUrl] = useState('https://pokeapi.co/api/v2/pokemon')
+    const [vm, setVm] = useState(0);
+    const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon')
+    const[nmPokemon,setNmPokemon] = useState('');
 
     async function buscarPokemon() {
-
         let response = await axios.get(url);
 
         let listaPokemon = [];
@@ -36,50 +37,64 @@ export default function Pokemon() {
         setPokemons(listaPokemon);
     }
 
-    async function pokeShiny(){
-        let url = 'https://pokeapi.co/api/v2/pokemon';
+    async function mostrarShiny() {
+        let shinyPokemons = await Promise.all(
+            pokemons.map(async (pokemon) => {
+                let response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.nome}`);
+                let shinyImagem = response.data.sprites.other['official-artwork'].front_shiny;
 
-        let response = await axios.get(url);
-
-        let listaPokemon = [];
-
-        for (let item of response.data.results) {
-        let pokemonResp = await axios.get(item.url);
-
-            let imagem = pokemonResp.data.sprites.other['official-artwork'].front_shiny;
-
-            let tipos = '';
-            for (let t of pokemonResp.data.types) {
-                tipos = tipos + t.type.name + '/'
-
-            }
-
-            listaPokemon.push({
-                nome: item.name,
-                imagem: imagem,
-                tipo: tipos
+                return {
+                    ...pokemon,
+                    imagem: shinyImagem,
+                };
             })
+        );
 
-
-        }
-        setPokemons(listaPokemon);
+        setPokemons(shinyPokemons);
     }
-    
-     async function verMais(){
-        let x= 20;
-        let y= 20 + x;  
-        setUrl('https://pokeapi.co/api/v2/pokemon?offset='+ y +'&limit=20')
+
+
+    async function verMais() {
+        setVm(vm + 20)
+        setUrl('https://pokeapi.co/api/v2/pokemon?offset=0' + '&limit=' + vm)
         buscarPokemon()
     }
+
+    async function buscar() {
+        
+            let response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${nmPokemon}`);
     
+            let novoPokemon = {
+                nome: response.data.name,
+                imagem: response.data.sprites.other['official-artwork'].front_default,
+                tipo: response.data.types.map((t) => t.type.name).join('/'),
+            };
+    
+            setPokemons([novoPokemon]);
+      
+    }
+
+    
+
+
 
     return (
         <div className='pagina-pokemon'>
 
             <section>
                 <img src='/assets/images/logoPokedex.png' />
-                <button onClick={buscarPokemon}>Encontrar pokemons</button>
+                <div className='busca'>
+                    <button onClick={buscarPokemon}>Encontrar pokemons</button>
 
+                    <div className='inp1'>
+                        <div>
+                            <h2>Novo item</h2>
+                            <input type='text' value={nmPokemon} onChange={e => setNmPokemon(e.target.value)} ></input> 
+                        </div>
+
+                        <button onClick={buscar} ><img src='/assets/images/icon-buscar2.png' /></button>   
+                    </div>
+                </div>
                 <div className='poke'>
                     {pokemons.map((pokemons) => (
                         <Pokemn
@@ -92,7 +107,7 @@ export default function Pokemon() {
 
                 <div className='buttons'>
                     <button onClick={verMais}> ver mais</button>
-                    <button onClick={pokeShiny}> Shiny </button>
+                    <button onClick={mostrarShiny} > Shiny </button>
                 </div>
             </section>
         </div>

@@ -27,7 +27,6 @@ root.render(
       <Route path ='/' element={<Insta />} />
       <Route path ='/filme' element={<Filme />} />
       <Route path='/pokemon' element={<Pokemon />} />
-      <Route path='/pokemn' element={<Pokemn />} />
     </Routes>
   </BrowserRouter>
   </React.StrictMode>
