@@ -14,13 +14,6 @@ export default function Filme() {
         setFiltro(e.target.value);
     };
 
-    function proxPagina(){
-        if(pagina < 10){
-            let x=pagina++
-        }
-        setPagina(pagina)
-    }
-
 
     async function buscar() {
         let url = `http://www.omdbapi.com?apikey=7619b256&s=${filme}&type=${filtro}&page=${pagina}`;
@@ -31,11 +24,6 @@ export default function Filme() {
     function teclaEnter(e) {
         if (e.key == 'Enter')
             buscar();
-    }
-
-    function selecFiltro(e){
-        setFiltro(e)
-   
     }
 
 
@@ -93,10 +81,6 @@ export default function Filme() {
                         <option value="series">Série</option>
                         <option value="game">Jogo</option>
                     </select>
-
-                    <button onClick={proxPagina}>
-                        Próximo
-                    </button>
 
                 </section>
             </aside>

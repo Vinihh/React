@@ -30,7 +30,12 @@ function App() {
         <Link  to='/aluno'> Aluno</Link>
         <Link  to='/sorvetinho'> Sorvete</Link>
         <Link  to='/juros'> Juros</Link>
-
+        </div>
+        <div>
+        <Link  to='/marvel'> Marvel</Link>
+        <Link  to='/pokemon'> Pokemon</Link>
+        <Link  to='/filme'> Filme</Link>
+        <Link  to='/netflix'> Netflix</Link>
         </div>
       </nav>
       

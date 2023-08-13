@@ -74,7 +74,12 @@ export default function Pokemon() {
       
     }
 
-    
+    function teclaEnter(e) {
+        if (e.key === 'Enter') {
+            buscar();
+        }
+    }
+
 
 
 
@@ -89,12 +94,13 @@ export default function Pokemon() {
                     <div className='inp1'>
                         <div>
                             <h2>Nome Pokemon</h2>
-                            <input type='text' value={nmPokemon} onChange={e => setNmPokemon(e.target.value)} ></input> 
+                            <input type='text' onKeyUp={teclaEnter} value={nmPokemon} onChange={e => setNmPokemon(e.target.value)} ></input> 
                         </div>
 
                         <button onClick={buscar} ><img src='/assets/images/icon-buscar2.png' /></button>   
                     </div>
                 </div>
+                
                 <div className='poke'>
                     {pokemons.map((pokemons) => (
                         <Pokemn
