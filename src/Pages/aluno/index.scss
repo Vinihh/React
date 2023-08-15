@@ -49,6 +49,21 @@
 
         margin-top: -100px;
         padding: 70px 70px;
+
+        .mostrar{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            
+            button{
+                margin-left:15px;
+                padding: 3px 9px;
+                border-radius: 100%;
+                background: linear-gradient(rgb(113, 29, 196),rgb(170, 114, 226));
+
+            }
+        }
     }
 
 
@@ -62,14 +77,18 @@
         border: 2px solid black; 
 
     }
-    table td{
-        border: 2px solid black;   
-        padding: 5px;     
-    }
+   
 
     section{
        display: flex;
        justify-content: center;
        align-items: center;
+    }
+
+    table{
+        #b3{
+            border: none;
+            background-color: transparent;
+        }
     }
 }
