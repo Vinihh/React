@@ -13,10 +13,11 @@
         left: 10px;
         font-size: 18px;
     }
-    
+
     h1 {
         font-size: 40px;
     }
+
     input {
         font-size: 22px;
         padding: 5px;
@@ -26,7 +27,7 @@
 
     button {
         background-color: rgb(146, 29, 196);
-        
+
         cursor: pointer;
         outline: none;
         border: none;
@@ -50,45 +51,49 @@
         margin-top: -100px;
         padding: 70px 70px;
 
-        .mostrar{
+        .mostrar {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            
-            button{
-                margin-left:15px;
+
+            button {
+                margin-left: 15px;
                 padding: 3px 9px;
                 border-radius: 100%;
-                background: linear-gradient(rgb(113, 29, 196),rgb(170, 114, 226));
+                background: linear-gradient(rgb(113, 29, 196), rgb(170, 114, 226));
 
             }
         }
     }
 
 
-    .container > h1{
+    .container>h1 {
         text-align: center;
     }
-    
-    table th{
-        padding: 5px 10px;     
+
+    table th {
+        padding: 5px 10px;
         background-color: rgb(238, 238, 238);
-        border: 2px solid black; 
+        border: 2px solid black;
 
     }
-   
 
-    section{
-       display: flex;
-       justify-content: center;
-       align-items: center;
+
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    table{
-        #b3{
+    table {
+        #b3 {
             border: none;
             background-color: transparent;
+        }
+
+        td {
+            background-color: #dedede;
         }
     }
 }

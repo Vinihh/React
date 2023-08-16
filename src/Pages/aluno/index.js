@@ -10,20 +10,19 @@ export default function Aluno() {
   const [nomeAluno, setNome] = useState('');
   const [chamadaAluno, setChamada] = useState(1);
   const [alunos, setAlunos] = useState([]);
-  const[teste,setTeste] = useState('{() => excluir}')
 
   function adicionarAluno() {
     let aluno = {
-      nome: nomeAluno, 
+      nome: nomeAluno,
       chamada: chamadaAluno
     }
     setAlunos([...alunos, aluno])
     setMostrarTabela(true)
     setNome('')
-    let x = chamadaAluno+1;
+    let x = chamadaAluno + 1;
     setChamada(x)
-    
-    
+
+
   }
 
   function mostrarInfo() {
@@ -31,61 +30,67 @@ export default function Aluno() {
     setMostrarTabela(!mostrarTabela)
   }
 
-  function excluir(excluirItem) {
-    let novosAlunos = alunos.filter(item => item.chamada != excluirItem.chamada)
-    setAlunos([...novosAlunos])
-    
+  function excluirAluno(chamada) {
+   
+    setAlunos(alunos.filter(aluno => aluno.chamada !== chamada))
+    let y= chamadaAluno - 1
+    setChamada(y)
+
   }
 
-return (
-  <div className="pagina-lista-tarefa">
-    <div className='container'>
-      <div className='mostrar'>
-        <h1> Lista de Alunos </h1>
-        <button onClick={mostrarInfo}>
-          {mostrar == true ? '-' : '+'}
-        </button>
-      </div>
-      {mostrar == true &&
-        <>
-          <div>
-            Nome: <input type='text' value={nomeAluno} onChange={e => setNome(e.target.value)} />
-            Chamada: {chamadaAluno}
-            <button onClick={adicionarAluno}> Adicionar </button>
-          </div>
-        </>
-      }
-      {mostrarTabela == true &&
-        <>
-          <div>
-            <section>
+  return (
+    <div className="pagina-lista-tarefa">
+      <div className='container'>
+        <div className='mostrar'>
+          <h1> Lista de Alunos </h1>
+          <button onClick={mostrarInfo}>
+            {mostrar == true ? '-' : '+'}
+          </button>
+        </div>
+        {mostrar == true &&
+          <>
+            <div>
+              Nome: <input type='text' value={nomeAluno} onChange={e => setNome(e.target.value)} />
+              Chamada: {chamadaAluno}
+              <button onClick={adicionarAluno}> Adicionar </button>
+            </div>
+          </>
+        }
+        {mostrarTabela == true &&
+          <>
+            <div>
+              <section>
               <table>
-                <thead>
-                  <tr>
-                    <th>Chamada</th>
-                    <th>Nome</th>
-                    <th id='b3'></th>
-                  </tr>
-                </thead>
+        <thead>
+          <tr>
+            <th>Chamada</th>
+            <th>Nome</th>
+            <th id='b3'></th>
+          </tr>
+        </thead>
+        <tbody>
+          {alunos.map((aluno) => (
+            <tr>
+              <td>{aluno.chamada}</td>
+              <td>
+                <Alun nome={aluno.nome} 
+                chamada={aluno.chamada} />
+              </td>
+              <td>
+                <button onClick={() => excluirAluno(aluno.chamada)}>Excluir</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
-                <tbody>
-                {alunos.map((alunos) => (
-                        <Alun
-                            nome={alunos.nome}
-                            chamada={alunos.chamada}
-                            button={teste}
-                        />
-                    ))}
+              </section>
+            </div>
+          </>
+        }
+      </div>
 
-                </tbody>
-              </table>
-            </section>
-          </div>
-        </>
-      }
+      <Link className='voltar' to='/'> Voltar para Menu </Link>
     </div>
-
-    <Link className='voltar' to='/'> Voltar para Menu </Link>
-  </div>
-)
+  )
 }
